@@ -2,36 +2,33 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        digitarNumeros();
+        typeNumbers();
     }
 
-
-    static void digitarNumeros() {
-        System.out.println("Pequena calculadora!");
+    static void typeNumbers() {
+        System.out.println("Small calculator!");
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o primeiro número: ");
-        int numero = Integer.parseInt(scanner.nextLine());
+        System.out.print("Type the first number: ");
+        int number = Integer.parseInt(scanner.nextLine());
 
-        System.out.print("Digite o segundo número: ");
-        int segundoNumero = Integer.parseInt(scanner.nextLine());
+        System.out.print("Type the second number: ");
+        int secondNumber = Integer.parseInt(scanner.nextLine());
 
-        System.out.print("Você quer somar ou subtrair?\n1 para somar\n2 para subtrair\n");
+        System.out.print("Do you wish to add or subtract?\nType 1 to add\nType 2 to subtract\n");
         int question = Integer.parseInt(scanner.nextLine());
 
-        int soma = numero + segundoNumero;
-        int subtracao = numero - segundoNumero;
+        int addition = number + secondNumber;
+        int subtraction = number - secondNumber;
 
         if (question == 1) {
-            System.out.println("Seu resultado é: " + soma);
+            System.out.println("Your result is: " + addition);
+        } else if (question == 2) {
+            System.out.println("Your result is: " + subtraction);
         } else {
-            if (question == 2) {
-                System.out.println("Seu resultado é: " + subtracao);
-            } else {
-                System.out.println("Opção inválida, tente novamente.\n");
-                digitarNumeros();
-            }
+            System.out.println("Invalid option, try again.\n");
+            typeNumbers();
         }
     }
 }
